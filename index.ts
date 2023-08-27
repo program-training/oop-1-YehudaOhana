@@ -103,38 +103,26 @@ class Shape {
   }
 }
 
-class Rectangle extends Shape {
-  width: number;
-  height: number;
-  constructor(width: number, height: number) {
-    super();
-    this.width = width;
-    this.height = height;
-  }
-
-  info(): string {
-    return `This is a rectangle`;
-  }
-
-  area(): number {
-    return this.width * this.height;
-  }
-
-  scale(x: number): this {
-    this.width *= x;
-    this.height *= x;
-    return this;
-  }
-
-  static twoRectangle(Rectangle1: Rectangle, Rectangle2: Rectangle): Rectangle {
-    const newRectangle = new Rectangle(
-      Rectangle1.width + Rectangle2.width,
-      Rectangle1.height + Rectangle2.height
-    );
-    return newRectangle;
+class Triangle extends Shape {
+  draw(): void {
+    console.log(`drawing a Triangle`);
   }
 }
 
 class Circle extends Shape {
-  co;
+  draw(): void {
+    console.log(`drawing a Circle`);
+  }
+}
+
+class Square extends Shape {
+  draw(): void {
+    console.log(`drawing a  Square`);
+  }
+}
+
+function renderShapes(arr: Shape[]): void {
+  arr.forEach((element) => {
+    element.draw();
+  });
 }
